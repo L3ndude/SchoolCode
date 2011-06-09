@@ -1,4 +1,4 @@
-﻿<u>***Opdracht 2: Wereldklok***</u<
+﻿<u>***Opdracht 2: Wereldklok***</u>
 
 Schrijf een applicatie die voor verschillende steden in de wereld de tijd weergeeft.
 Maak daarbij gebruik van de onderstaande opzet en elemenenten.
