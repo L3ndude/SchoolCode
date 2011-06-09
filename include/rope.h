@@ -2,7 +2,8 @@
 #define _ROPE_H_
 
 #include <nds.h>
-#include "draw.h"
+#include <linkedlist.h>
+#include <draw.h>
 
 struct Rope
 {
@@ -26,7 +27,7 @@ void delete_rope_segment(RopeSegment* segment);
 
 void add_segment_to_rope(Rope* rope, RopeSegment* segment);
 
-void draw_rope(Rope* rope);
+void draw_rope(Color* background, Rope* rope);
 
 void give_rope_physics(Rope* rope);
 

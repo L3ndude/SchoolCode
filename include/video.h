@@ -2,6 +2,7 @@
 #define VIDEO_H_
 
 #include <nds.h>
+#include <cstdio>
 
 #define Color				u16
 
@@ -13,9 +14,8 @@
 // Backgrounds
 #define MAIN_BACKGROUND		((Color*)BG_BMP_RAM(0))
 #define MAIN_LAYER			((Color*)BG_BMP_RAM(6))
-#define SUB_BACKGROUND		((Color*)BG_BMP_RAM_SUB(0))
 
-#define BACKGROUND_SIZE		98304 // (256 * 192 pixels) * 2 byte per pixel
+#define BACKGROUND_SIZE		SCREEN_PIXEL_COUNT*2 // (256 * 192 pixels) * 2 byte per pixel
 
 void create_buffers();
 void delete_buffers();

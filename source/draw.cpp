@@ -1,4 +1,4 @@
-#include "draw.h"
+#include <draw.h>
 
 inline void draw_pixel(Color* background, s16 x, s16 y, Color color)
 {
