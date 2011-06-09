@@ -1,0 +1,23 @@
+﻿<u>'''Bouw een "hello world" typemachine:'''</u>
+* Maak een char array met de tekst "Hello World"
+* Zorg dat de letters één voor één op het scherm komen
+* Zorg voor een korte interval na elke letter
+* Als de hele zin getypt is:
+** Wacht een moment
+** Wis het scherm
+** Begin opnieuw op een andere positie.
+* Geef elke letter een andere willekeurige kleur
+
+----
+
+<u>'''Maak a.d.h.v. array(s) een scrollende tekst over het scherm:'''</u>
+* Beweeg elk karakter van links naar rechts in de string door de array indices
+* Laat ze langzaam genoeg bewegen zodat het leesbaar blijft
+* Laat de tekst zowel horizontaal als verticaal als diagonaal scrollen
+
+----
+
+- Tip: Gebruik voor het instellen van tekstkleur en positie deze website:
+    http://www.hamiltonlabs.com/UserGuide/30-AnsiEscapeSequences.htm
+
+<font style="color:red">Let op: niet alle escape sequences werken</font>

@@ -1,0 +1,27 @@
+﻿Opdracht: Wereldklok
+
+Schrijf een applicatie die voor verschillende steden in de wereld de tijd weergeeft.
+Maak daarbij gebruik van de onderstaande opzet en elemenenten.
+
+Opzet:
+ Maak een nieuw project
+ Kopieer het bestand geometry.h uit een voorbeeld naar je include map
+ Maak een nieuwe header file aan met de naam clock.h
+ Maak een nieuwe source file aan met de naam clock.c
+
+Maak een enumeratie Color met alle 8 beschikbare kleuren
+ (beschikbare kleuren met waarden: http://www.hamiltonlabs.com/UserGuide/30-AnsiEscapeSequences.htm)
+
+Maak de volgende structures:
+ Clock met de eigenschappen: u8 hour, u8 minute en u8 second
+ Timezone met de eigenschappen: char* city en s8 time_diff
+ Time met de eigenschappen: Timezone* timezone, Clock* clock, Color color en Point position
+
+Implementeer de volgende methoden:
+ void update_clock(Clock*); // Verhoogt de tijd in de klok met een seconde (je mag kiezen voor een 12/24 uurs klok)
+ void display_time(Time*); // Laat de tijd op de ingestelde positie zien met de naam van de stad met daaronder de tijd (op basis van de clock samen met het verschil (time_diff)) in de gekozen kleur
+ (zorg ervoor dat beide methoden elke seconde worden aangeroepen)
+
+Maak 1 basis Clock aan die op een vooraf ingestelde tijd begint (dient als UTC).
+Maak minimaal drie Timezones aan met drie verschillende steden (uit verschillende tijdzones).
+Maak voor elke Timezone een tijd aan die gebruik maakt van de centrale clock.
