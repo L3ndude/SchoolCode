@@ -20,7 +20,12 @@ void handle_keys_down(u32 keys)
 	if (keys & KEY_DOWN){}
 	if (keys & KEY_R){}
 	if (keys & KEY_L){}
-	if (keys & KEY_X){}
+	if (keys & KEY_X)
+	{
+		physics = false;
+		delete_rope(rope);
+		rope = create_rope(COLOR_WHITE, new LinkedList);
+	}
 	if (keys & KEY_Y){}
 	if (keys & KEY_TOUCH)
 		add_segment_to_rope(rope, create_rope_segment(touch.px, touch.py, 0, 10));
@@ -80,7 +85,8 @@ void loop()
 		handle_keys();
 
 		clear_topscreen();
-		printf("Physics: %s", physics?"On":"Off");
+		printf("Rope address: %p\n", rope);
+		printf("Physics: %s\n", physics?"On":"Off");
 
 		if(physics)
 			give_rope_physics(rope);

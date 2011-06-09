@@ -21,8 +21,8 @@ struct RopeSegment
 Rope * create_rope(Color color, LinkedList* rope_segment_list);
 RopeSegment * create_rope_segment(u16 x, u16 y, s8 fall_speed, u8 max_fall_speed);
 
-void delete_rope(Rope* rope);
 void delete_rope_segment(RopeSegment* segment);
+void delete_rope(Rope* rope);
 
 void add_segment_to_rope(Rope* rope, RopeSegment* segment);
 

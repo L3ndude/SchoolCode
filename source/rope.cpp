@@ -22,6 +22,12 @@ RopeSegment * create_rope_segment(u16 x, u16 y, s8 fall_speed, u8 max_fall_speed
 	return segment;
 }
 
+void delete_rope_segment(RopeSegment* segment)
+{
+	delete segment;
+	segment = 0;
+}
+
 void delete_rope(Rope* rope)
 {
 	do {
@@ -38,13 +44,6 @@ void delete_rope(Rope* rope)
 	} while (rope->rope_segment_list == 0);
 
 	delete rope;
-	rope = 0;
-}
-
-void delete_rope_segment(RopeSegment* segment)
-{
-	delete segment;
-	segment = 0;
 }
 
 void add_segment_to_rope(Rope* rope, RopeSegment* segment)
