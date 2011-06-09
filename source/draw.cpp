@@ -1,6 +1,6 @@
 #include <draw.h>
 
-inline void draw_pixel(Color* background, s16 x, s16 y, Color color)
+inline void draw_pixel(Buffer* background, s16 x, s16 y, Color color)
 {
 	if(x >= 0 && x < SCREEN_WIDTH && y >= 0 && y < SCREEN_HEIGHT)
 	{
@@ -8,7 +8,7 @@ inline void draw_pixel(Color* background, s16 x, s16 y, Color color)
 	}
 }
 
-void fill_background(Color* background, Color color)
+void fill_background(Buffer* background, Color color)
 {
 	u16 index;
 
@@ -18,7 +18,7 @@ void fill_background(Color* background, Color color)
 	}
 }
 
-void draw_bitmap(Color* background, Color* bitmap, s16 x, s16 y, s16 width, s16 height)
+void draw_bitmap(Buffer* background, Buffer* bitmap, s16 x, s16 y, s16 width, s16 height)
 {
 	s16 y_pos, x_pos;
 
@@ -31,7 +31,7 @@ void draw_bitmap(Color* background, Color* bitmap, s16 x, s16 y, s16 width, s16 
 	}
 }
 
-void draw_line(Color* background, s16 x_start, s16 y_start, s16 x_end, s16 y_end, Color color)
+void draw_line(Buffer* background, s16 x_start, s16 y_start, s16 x_end, s16 y_end, Color color)
 {
 	s16 x, y, error;
 
@@ -84,7 +84,7 @@ void draw_line(Color* background, s16 x_start, s16 y_start, s16 x_end, s16 y_end
     }
 }
 
-void draw_thick_line(Color* background, s16 x_start, s16 y_start, s16 x_end, s16 y_end, u8 thickness, Color color)
+void draw_thick_line(Buffer* background, s16 x_start, s16 y_start, s16 x_end, s16 y_end, u8 thickness, Color color)
 {
 	s16 x, y, error;
 
@@ -137,7 +137,7 @@ void draw_thick_line(Color* background, s16 x_start, s16 y_start, s16 x_end, s16
     }
 }
 
-void fill_rect(Color* background, s16 x, s16 y, u16 width, u16 height, Color color)
+void fill_rect(Buffer* background, s16 x, s16 y, u16 width, u16 height, Color color)
 {
 	s16 x_pos, y_pos;
 

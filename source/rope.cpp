@@ -59,7 +59,7 @@ void add_segment_to_rope(Rope* rope, RopeSegment* segment)
 	rope->rope_segment_list = new_segment;
 }
 
-void draw_rope(Color* background, Rope* rope)
+void draw_rope(Buffer* background, Rope* rope)
 {
 	// TO-DO
 }

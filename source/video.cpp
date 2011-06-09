@@ -1,13 +1,13 @@
 #include "video.h"
 
 PrintConsole top_screen;
-Color* main_buffer;
-Color* main_layer;
+Buffer* main_buffer;
+Buffer* main_layer;
 
 void create_buffers()
 {
-	main_buffer = new Color[SCREEN_PIXEL_COUNT];
-	main_layer = new Color[SCREEN_PIXEL_COUNT];
+	main_buffer = new Buffer[SCREEN_PIXEL_COUNT];
+	main_layer = new Buffer[SCREEN_PIXEL_COUNT];
 }
 
 void delete_buffers()

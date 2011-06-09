@@ -17,11 +17,11 @@
 #define COLOR_WHITE			PIXEL(RGB15(31, 31, 31))
 #define COLOR_NONE			0
 
-void draw_pixel(Color*, s16, s16, Color);
-void fill_background(Color*, Color);
-void draw_bitmap(Color*, Color*, s16, s16, s16, s16);
-void draw_line(Color*, s16, s16, s16, s16, Color);
-void fill_rect(Color*, s16, s16, u16, u16, Color);
-void draw_thick_line(Color*, s16, s16, s16, s16, u8, Color);
+void draw_pixel(Buffer*, s16, s16, Color);
+void fill_background(Buffer*, Color);
+void draw_bitmap(Buffer*, Buffer*, s16, s16, s16, s16);
+void draw_line(Buffer*, s16, s16, s16, s16, Color);
+void fill_rect(Buffer*, s16, s16, u16, u16, Color);
+void draw_thick_line(Buffer*, s16, s16, s16, s16, u8, Color);
 
 #endif
