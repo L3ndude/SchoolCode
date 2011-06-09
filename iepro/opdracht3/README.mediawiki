@@ -1,0 +1,30 @@
+﻿<u>***Opdracht 3: Comic Viewer ***</u>
+
+Bouw een applicatie die een grote comic afbeelding van links naar rechts scrollt. 
+Gebruik de onderstaande opzet. 
+
+Opzet: 
+* Download de comic.zip van deze opdracht.
+* Zet deze bestanden in een nieuwe "data" map in je project.
+* Kopieer video.h uit het Buffering voorbeeld naar je project.
+* Maak een source en header bestand aan voor de Comic applicatie.
+
+Maak een <code>Comic structure met de eigenschappen: 
+* <code>Color* image</code>
+* <code>u16 image_width</code>
+* <code>u16 offset_x</code>
+
+Implementeer de volgende methoden: 
+* <code>void scroll_comic( Comic *comic, u8 speed )</code>
+* <code>void copy_comic_to_buffer( Comic *comic, Color *buffer )</code>
+
+;<code>scroll_comic</code>
+: Laat in de methode <code>scroll_comic</code> de <code>offset_x</code> van het plaatje met <code>speed</code> vooruit scrollen 
+: Als het plaatje tot het eind is gescrolled, wacht je 1.5 seconden en zet je het plaatje weer terug naar het begin. 
+
+;<code>copy_comic_to_buffer</code>
+: Laat de methode <code>copy_comic_to_buffer</code> het plaatje kopiëren naar de <code>buffer</code>. 
+
+Requirements:
+* Maak in je <code>main</code> een <code>Comic</code> aan met het plaatje van blackboard. 
+* Laat het plaatje scrollen met snelheid 1 (gebruik <code>scroll_comic</code>).
