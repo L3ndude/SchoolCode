@@ -3,11 +3,13 @@
 Rope * create_rope(Color color, LinkedList* rope_segment_list)
 {
 	// TO-DO
+	return 0;
 }
 
 RopeSegment * create_rope_segment(u16 x, u16 y, s8 fall_speed, u8 max_fall_speed)
 {
 	// TO-DO
+	return 0;
 }
 
 void delete_rope(Rope* rope)
@@ -30,7 +32,7 @@ void draw_rope(Rope* rope)
 	// TO-DO
 }
 
-void physics_for_rope(Rope* rope)
+void give_rope_physics(Rope* rope)
 {
 	// TO-DO
 }

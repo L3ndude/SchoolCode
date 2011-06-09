@@ -28,6 +28,6 @@ void add_segment_to_rope(Rope* rope, RopeSegment* segment);
 
 void draw_rope(Rope* rope);
 
-void physics_for_rope(Rope* rope);
+void give_rope_physics(Rope* rope);
 
 #endif

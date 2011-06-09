@@ -1,0 +1,47 @@
+﻿Maak een applicatie waar je een ketting/touw kan tekenen die naar beneden valt.
+
+Opzet:
+
+    Gebruik draw.c en .h van het CollisionMap voorbeeld (les 5) voor het tekenen
+    Gebruik ook de linkedlist van het LinkedList voorbeeld (les 5)
+    Maak een source en header bestand voor het touw
+    
+Maak een Rope structure met de volgende eigenschappen: Color color, LinkedList* rope_segment_list.
+Maak een RopeSegment structure met deze eigenschappen: u16 x, u16 y, s8 fall_speed, u8 max_fall_speed.
+
+Implementeer de volgende methoden voor Rope:
+
+    - methoden om een Rope* en RopeSegment* te maken
+    - methoden om een Rope* en RopeSegment* te verwijderen
+    - een methode om een RopeSegment* aan een Rope* toe te voegen (m.b.v. de linkedlist)
+    - een methode die een Rope* tekent
+    - een methode die een Rope* naar beneden laat vallen
+    
+
+Realiseer de volgende functionaliteit:
+
+    - Bij opstarten: Kleur de achtergrond, maak een Rope aan
+    - Wanneer op het scherm wordt getapt, voeg een RopeSegment (met touch positie) toe aan de Rope
+    - Wanneer op start wordt gedrukt, laat de Rope naar beneden vallen
+    - Wanneer op X wordt gedrukt, verwijder de Rope, maak een nieuwe Rope aan, en begin opnieuw
+    - Teken onderaan de game-loop alle RopeSegment-en van de Rope als 5x5 vierkant in de kleur van Rope
+    - Verbind daarbij ook de RopeSegment-en m.b.v. draw_line (in draw.c, .h) in de kleur van Rope
+    
+    
+Om één RopeSegment naar beneden te laten vallen, gebruik de onderstaande code.
+pas deze code dus toe op alle segmenten in de lijst.
+
+    rope_segment->speed += 1;
+    if( rope_segment->speed > rope_segment->max_speed )
+    {
+        rope_segment->speed = rope_segment->max_speed;
+    }
+
+    rope_segment->y += rope_segment->speed;
+
+    if( rope_segment->y > 180 )
+    {
+        rope_segment->y = 180;
+        rope_segment->speed *= -1;
+        rope_segment->max_speed /= 2;
+    }
