@@ -1,0 +1,36 @@
+﻿Opdracht 4: Comic Viewer Extended
+
+Breidt de Comic Viewer van opdracht 3 uit met knoppen en touch input.
+
+Opzet:
+Maak een kopie van je opdracht 3.
+Download de 2 comics onder deze opdracht.
+Maak zelf 2 knop-plaatjes met de tekst "Next" en "Scroll".
+Vergeet de afbeeldingen niet te includen.
+
+Maak een Button structure met daarin de eigenschappen:
+Een functie pointer naar een knop functie: void (*button_handler)();
+X en Y positie van de knop
+Pointer naar een knop plaatje
+Breedte van het plaatje in pixels
+Grootte van het plaatje in bits
+Pointer naar een buffer uit video.h (Color* buffer)
+
+Bouw de volgende button functies:
+
+void handle_button( Button* button )
+Tekent de knop naar zijn buffer, en kijkt (met touchPosition) of er op de knop gedrukt is.
+Als dat het geval is: roep dan de function pointer van de button aan.
+
+Button* create_button(
+   Color* buffer, u16 x, u16 y,
+   u16* image_data, u16 image_width, u16 image_height,
+   void (*button_handler)( Button* ) )
+Maakt de knop (via malloc) en geeft deze terug. Kopieer alle meegegeven eigenschappen naar de nieuwe button.
+
+
+Verander de main van je oude comic viewer:
+Maak een globale array en vul deze met de 2 comics die hier op blackboard staan (je mag er wel zelf natuurlijk meer toevoegen).
+Maak 2 knoppen, de Next knop laat de volgende comic uit de array zien, de Scroll knop scrolt de getoonde comic (de comics scrollen niet meer automatisch!).
+Zorg ervoor dat de langwerpige comic van boven naar beneden scrolt, en de breede comic van links naar rechts.
+Laat de comics ook scrollen met de pijltjestoetsen.
