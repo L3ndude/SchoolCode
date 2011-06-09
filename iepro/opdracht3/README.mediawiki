@@ -1,4 +1,4 @@
-﻿***Opdracht 3: Comic Viewer ***
+﻿'''Opdracht 3: Comic Viewer'''
 
 Bouw een applicatie die een grote comic afbeelding van links naar rechts scrollt. 
 Gebruik de onderstaande opzet. 
