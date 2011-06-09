@@ -53,3 +53,10 @@ void init_video()
 	init_backgrounds();
 	create_buffers();
 }
+
+void clear_topscreen()
+{
+	consoleSelect(&top_screen);
+	consoleClear();
+	puts("Made by Lennart Kroes, s1062295");
+}

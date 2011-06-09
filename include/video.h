@@ -1,5 +1,5 @@
-#ifndef VIDEO_H_
-#define VIDEO_H_
+#ifndef _VIDEO_H_
+#define _VIDEO_H_
 
 #include <nds.h>
 #include <cstdio>
@@ -16,7 +16,7 @@
 #define MAIN_BACKGROUND		((Buffer*)BG_BMP_RAM(0))
 #define MAIN_LAYER			((Buffer*)BG_BMP_RAM(6))
 
-#define BACKGROUND_SIZE		SCREEN_PIXEL_COUNT*2 // (256 * 192 pixels) * 2 byte per pixel
+#define BACKGROUND_SIZE		(SCREEN_PIXEL_COUNT * 2)
 
 void create_buffers();
 void delete_buffers();
@@ -24,5 +24,6 @@ void copy_buffers();
 void init_displays();
 void init_backgrounds();
 void init_video();
+void clear_topscreen();
 
 #endif

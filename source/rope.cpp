@@ -64,27 +64,30 @@ void draw_rope(Buffer* background, Rope* rope)
 	// TO-DO
 }
 
+void give_rope_segment_physics(RopeSegment* segment)
+{
+	segment->fall_speed += 1;
+
+	if( segment->fall_speed > segment->max_fall_speed )
+	{
+		segment->fall_speed = segment->max_fall_speed;
+	}
+
+	segment->y += segment->fall_speed;
+
+	if( segment->y > 180 )
+	{
+		segment->y = 180;
+		segment->fall_speed *= -1;
+		segment->max_fall_speed /= 2;
+	}
+}
+
 void give_rope_physics(Rope* rope)
 {
-	// TO-DO
+	LinkedList * segment = rope->rope_segment_list;
+	do {
+		give_rope_segment_physics((RopeSegment*)segment->data);
+		segment = segment->next;
+	} while (segment != 0);
 }
-
-/*
-
-rope_segment->speed += 1;
-
-if( rope_segment->speed > rope_segment->max_speed )
-{
-    rope_segment->speed = rope_segment->max_speed;
-}
-
-rope_segment->y += rope_segment->speed;
-
-if( rope_segment->y > 180 )
-{
-    rope_segment->y = 180;
-    rope_segment->speed *= -1;
-    rope_segment->max_speed /= 2;
-}
-
-*/

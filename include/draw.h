@@ -1,5 +1,5 @@
-#ifndef DRAW_H_
-#define DRAW_H_
+#ifndef _DRAW_H_
+#define _DRAW_H_
 
 #include <nds.h>
 #include "video.h"
