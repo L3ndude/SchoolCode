@@ -19,4 +19,4 @@
 
 - Tip: Gebruik voor het instellen van tekstkleur en positie [http://www.hamiltonlabs.com/UserGuide/30-AnsiEscapeSequences.htm deze website]
 
-<font style="color:red">Let op: niet alle escape sequences werken</font>
+<span style="color:red">Let op: niet alle escape sequences werken</span>
