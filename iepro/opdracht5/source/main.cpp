@@ -24,7 +24,8 @@ void handle_keys_down(u32 keys)
 	{
 		physics = false;
 		delete_rope(rope);
-		rope = create_rope(COLOR_WHITE, new LinkedList);
+		rope = NULL;
+		rope = create_rope(COLOR_WHITE, create_list());
 	}
 	if (keys & KEY_Y){}
 	if (keys & KEY_TOUCH)
@@ -84,10 +85,6 @@ void loop()
 
 		handle_keys();
 
-		clear_topscreen();
-		printf("Rope address: %p\n", rope);
-		printf("Physics: %s\n", physics?"On":"Off");
-
 		if(physics)
 			give_rope_physics(rope);
 
@@ -104,7 +101,7 @@ int main()
 
 	physics = false;
 
-	rope = create_rope(COLOR_WHITE, new LinkedList);
+	rope = create_rope(COLOR_WHITE, create_list());
 
 	loop();
 

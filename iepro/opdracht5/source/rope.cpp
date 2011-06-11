@@ -25,37 +25,30 @@ RopeSegment * create_rope_segment(u16 x, u16 y, s8 fall_speed, u8 max_fall_speed
 void delete_rope_segment(RopeSegment* segment)
 {
 	delete segment;
-	segment = 0;
+	segment = NULL;
 }
 
 void delete_rope(Rope* rope)
 {
-	do {
-		LinkedList * deletable = rope->rope_segment_list;
-		rope->rope_segment_list = deletable->next;
+	LinkedList * list = rope->rope_segment_list;
+	LinkedList * next;
 
-		if(rope->rope_segment_list != 0)
-			deletable->next->prev = 0;
-
-		delete_rope_segment((RopeSegment*)deletable->data);
-
-		delete deletable;
-
-	} while (rope->rope_segment_list == 0);
+	do
+	{
+		next = list->next;
+		if (list->data != NULL)
+			delete_rope_segment((RopeSegment*)list->data);
+		delete_list_element(list);
+		list = next;
+	}
+	while (list != NULL);
 
 	delete rope;
 }
 
 void add_segment_to_rope(Rope* rope, RopeSegment* segment)
 {
-	LinkedList * new_segment = new LinkedList;
-
-	new_segment->prev = 0;
-	new_segment->next = rope->rope_segment_list;
-	new_segment->data = segment;
-
-	rope->rope_segment_list->prev = new_segment;
-	rope->rope_segment_list = new_segment;
+	add_list_element(rope->rope_segment_list, segment);
 }
 
 void draw_rope(Buffer* background, Rope* rope)
@@ -85,8 +78,12 @@ void give_rope_segment_physics(RopeSegment* segment)
 void give_rope_physics(Rope* rope)
 {
 	LinkedList * segment = rope->rope_segment_list;
-	do {
-		give_rope_segment_physics((RopeSegment*)segment->data);
+
+	if(segment == NULL)
+		return;
+
+	while (segment->next != NULL) {
 		segment = segment->next;
-	} while (segment != 0);
+		give_rope_segment_physics((RopeSegment*)segment->data);
+	}
 }

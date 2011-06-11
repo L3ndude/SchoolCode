@@ -1,8 +1,10 @@
 #ifndef _ROPE_H_
 #define _ROPE_H_
 
+#include <cstdio>
 #include <nds.h>
 #include <draw.h>
+#include <linkedlist.h>
 
 struct Rope
 {

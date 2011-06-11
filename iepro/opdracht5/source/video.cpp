@@ -1,4 +1,4 @@
-#include "video.h"
+#include <video.h>
 
 PrintConsole top_screen;
 Buffer* main_buffer;

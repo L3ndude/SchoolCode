@@ -2,7 +2,7 @@
 #define _DRAW_H_
 
 #include <nds.h>
-#include "video.h"
+#include <video.h>
 
 #define PIXEL(x)			(x | (1 << 15))
 
