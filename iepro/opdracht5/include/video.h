@@ -21,6 +21,8 @@
 void create_buffers();
 void delete_buffers();
 void copy_buffers();
+void clear_buffers();
+void clear_buffer(Buffer* background);
 void init_displays();
 void init_backgrounds();
 void init_video();

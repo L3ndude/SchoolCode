@@ -6,6 +6,8 @@ extern Buffer* main_layer;
 Rope* rope;
 bool physics;
 touchPosition touch;
+Color background_color = COLOR_BLUE;
+Color rope_color = COLOR_YELLOW;
 
 void handle_keys_down(u32 keys)
 {
@@ -25,11 +27,14 @@ void handle_keys_down(u32 keys)
 		physics = false;
 		delete_rope(rope);
 		rope = NULL;
-		rope = create_rope(COLOR_WHITE, create_list());
+		rope = create_rope(rope_color, create_list());
 	}
 	if (keys & KEY_Y){}
 	if (keys & KEY_TOUCH)
+	{
+		if (touch.py <= 180)
 		add_segment_to_rope(rope, create_rope_segment(touch.px, touch.py, 0, 10));
+	}
 	if (keys & KEY_LID){}
 }
 
@@ -88,7 +93,12 @@ void loop()
 		if(physics)
 			give_rope_physics(rope);
 
+		draw_rope(main_layer, rope);
+
 		copy_buffers();
+
+		clear_buffer(main_layer);
+
 		swiWaitForVBlank();
 	}
 }
@@ -97,11 +107,11 @@ int main()
 {
 	init_video();
 
-	fill_background(main_buffer, COLOR_BLACK);
+	fill_background(main_buffer, background_color);
 
 	physics = false;
 
-	rope = create_rope(COLOR_WHITE, create_list());
+	rope = create_rope(rope_color, create_list());
 
 	loop();
 

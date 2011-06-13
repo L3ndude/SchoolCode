@@ -28,6 +28,8 @@ void delete_rope(Rope* rope);
 
 void add_segment_to_rope(Rope* rope, RopeSegment* segment);
 
+void draw_line_between_rope_segments(Buffer* background, Color color, RopeSegment* segment1, RopeSegment* segment2);
+void draw_rope_segment(Buffer* background, RopeSegment* segment);
 void draw_rope(Buffer* background, Rope* rope);
 
 void give_rope_segment_physics(RopeSegment* segment);

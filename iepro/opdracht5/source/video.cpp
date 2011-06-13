@@ -22,6 +22,22 @@ void copy_buffers()
 	dmaCopy(main_layer, MAIN_LAYER, BACKGROUND_SIZE);
 }
 
+void clear_buffers()
+{
+	u16 x;
+	for(x = 0; x < SCREEN_PIXEL_COUNT; x++)
+		main_buffer[x] = 0;
+	for(x = 0; x < SCREEN_PIXEL_COUNT; x++)
+		main_layer[x] = 0;
+}
+
+void clear_buffer(Buffer* background)
+{
+	int x;
+	for(x = 0; x < SCREEN_PIXEL_COUNT; x++)
+		background[x] = 0;
+}
+
 void init_displays()
 {
 	videoSetMode(MODE_5_2D);
