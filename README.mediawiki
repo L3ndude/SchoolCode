@@ -1,13 +1,13 @@
-= Code for school assignments and projects =
-
+== Code for school assignments and projects ==
 This is the main directory of all my school assignments and projects code. At the moment 98% is missing. I plan on adding it over time.
 
 Down from here i will tell you which directory is what class. Every code starts with an 'I'. This stands for "Informatica", which is a dutch translation of "Computer Science".
 
-== IAD1 ==
+* [[#IAD1]]
+* [[#IEPRO]]
 
+=== IAD1 ===
 IAD1 is "Informatica: Algorithms and Data structures 1".
 
-== IEPRO ==
-
+=== IEPRO ===
 IEPRO is "Informatica: Embedded Programming". In this class we pretty much learned about how to write a application/game for the "Nintendo DS". 
