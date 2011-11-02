@@ -11,8 +11,8 @@ extern touchPosition touch;
 Comic comics[2];
 u8 current_comic;
 
-Button scroll;
-Button next;
+Button * scroll;
+Button * next;
 
 void scroll_comic()
 {
@@ -108,6 +108,21 @@ void handle_button( Button* button )
 
 }
 
+Button * create_button( Color * image, u16 width, u32 size, u16 x, u16 y, void (* handler)(), Color * buffer )
+{
+	Button * button = new Button;
+	
+	button->image = image;
+	button->width = width;
+	button->size = size;
+	button->x = x;
+	button->y = y;
+	button->handler = handler;
+	button->buffer = buffer;
+	
+	return button;
+}
+
 int main( int argc, const char* argv[] )
 {
 	init_video();
@@ -122,7 +137,11 @@ int main( int argc, const char* argv[] )
 	comics[1].width = 256;
 	comics[1].size = (u32)comic2_imageBitmapLen;
 	comics[1].offset = 0;
+	
+	scroll = create_button((Color*)scrollBitmap, 96, (u32)scrollBitmapLen, 20, 144, scroll_comic, sub_buffer);
+	next = create_button((Color*)nextBitmap, 96, (u32)nextBitmapLen, 20+98+20, 144, next_comic, sub_buffer);
 
+	/*
 	scroll.image = (Color*)scrollBitmap;
 	scroll.width = 96;
 	scroll.size = (u32)scrollBitmapLen;
@@ -138,7 +157,7 @@ int main( int argc, const char* argv[] )
 	next.y = 144;
 	next.handler = next_comic;
 	next.buffer = sub_buffer;
-
+*/
 	loop();
 	delete_buffers();
 

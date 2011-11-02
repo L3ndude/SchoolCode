@@ -9,8 +9,8 @@ int keys;
 
 extern Comic comics[2];
 extern u8 current_comic;
-extern Button scroll;
-extern Button next;
+extern Button * scroll;
+extern Button * next;
 
 void create_buffers()
 {
@@ -81,8 +81,8 @@ void loop()
 		sub_buffer[(j * SCREEN_WIDTH) + i] = ( RGB15(17,8,28) | (1 << 15) );
 		*/
 
-		handle_button( &scroll );
-		handle_button( &next );
+		handle_button( scroll );
+		handle_button( next );
 
 		if(keysHeld() & KEY_RIGHT)
 			scroll_comic();

@@ -28,6 +28,7 @@ void next_comic();
 void copy_comic_to_buffer( Comic * comic, Color * buffer );
 void copy_button_to_buffer( Button * button, Color * buffer);
 void handle_button( Button* button );
+Button* create_button( Color * image, u16 width, u32 size, u16 x, u16 y, void (* handler)(), Color * buffer );
 
 /*
 ** Laat in de methode scroll_comic de offset_x van het plaatje met speed vooruit scrollen 
