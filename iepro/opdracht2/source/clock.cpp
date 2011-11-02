@@ -25,8 +25,8 @@ Timezone NZDT = {city6, 13};
 
 Time time1 = {&SST, &cclock, white, {2,0}};
 Time time2 = {&PDT, &cclock, blue, {4,3}};
-Time time3 = {&CEST, &cclock, cyan, {8,6}};
-Time time4 = {&NZST, &cclock, red, {16,9}};
+Time time3 = {&CET, &cclock, cyan, {8,6}};
+Time time4 = {&NZDT, &cclock, red, {16,9}};
 
 // updates the clock
 void update_clock(Clock* cl)
@@ -67,7 +67,7 @@ int main()
 	rawtime = time( NULL );
 	ptm = gmtime( &rawtime );
 
-	cclock.hour = ((u8)ptm->tm_hour - 2);
+	cclock.hour = ((u8)ptm->tm_hour - 1);
 	cclock.minute = (u8)ptm->tm_min;
 	cclock.second = (u8)ptm->tm_sec;
 
